@@ -37,10 +37,6 @@ export const SESSION_DECKS: SessionDeck[] = [
 
 const SESSION_NUMBERS = new Set(SESSION_DECKS.map((d) => d.session));
 
-export function listSessionNumbers(): number[] {
-  return SESSION_DECKS.map((d) => d.session).sort((a, b) => a - b);
-}
-
 export function resolveSessionDeck(session: number): SessionDeck {
   if (SESSION_NUMBERS.has(session)) {
     return SESSION_DECKS.find((d) => d.session === session)!;

@@ -1,10 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { SlideDeck } from "./deck/SlideDeck";
-import {
-  listSessionNumbers,
-  readSessionFromSearch,
-  resolveSessionDeck,
-} from "./deck/slides/sessionRegistry";
+import { readSessionFromSearch, resolveSessionDeck } from "./deck/slides/sessionRegistry";
 
 export function App() {
   const [session, setSession] = useState(() =>
@@ -18,7 +14,6 @@ export function App() {
   }, []);
 
   const deck = useMemo(() => resolveSessionDeck(session), [session]);
-  const availableSessions = useMemo(() => listSessionNumbers(), []);
 
   return (
     <SlideDeck
@@ -26,7 +21,6 @@ export function App() {
       slides={deck.slides}
       sessionTitle={deck.title}
       sessionNumber={deck.session}
-      availableSessionNumbers={availableSessions}
     />
   );
 }

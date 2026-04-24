@@ -6,19 +6,9 @@ type SlideDeckProps = {
   slides: Slide[];
   sessionTitle: string;
   sessionNumber: number;
-  availableSessionNumbers: number[];
 };
 
-export function SlideDeck({
-  slides,
-  sessionTitle,
-  sessionNumber,
-  availableSessionNumbers,
-}: SlideDeckProps) {
-  const sessionSwitcherHint =
-    availableSessionNumbers.length > 0
-      ? `Switch deck: ${availableSessionNumbers.map((n) => `?session=${n}`).join(" · ")}`
-      : null;
+export function SlideDeck({ slides, sessionTitle, sessionNumber }: SlideDeckProps) {
   const [index, setIndex] = useState(0);
   /** Session 4 quiz only: Space first reveals answer; reset when changing slides. */
   const [s4QuizAnswerRevealed, setS4QuizAnswerRevealed] = useState(false);
@@ -111,7 +101,6 @@ export function SlideDeck({
         {sessionNumber === 4
           ? "Session 4 quiz: space reveals answer, then space advances · arrows always change slides"
           : "Use arrow keys or space to move · Home / End for first / last slide"}
-        {sessionSwitcherHint ? ` · ${sessionSwitcherHint}` : null}
       </div>
     </div>
   );
