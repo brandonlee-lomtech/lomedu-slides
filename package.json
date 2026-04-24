@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "serve:dist": "bash scripts/serve-dist.sh start",
+    "serve:dist:stop": "bash scripts/serve-dist.sh stop",
+    "serve:dist:status": "bash scripts/serve-dist.sh status"
   },
   "dependencies": {
     "react": "^19.0.0",
