@@ -1,4 +1,5 @@
 import { useCallback, useState } from "react";
+import { publicAssetUrl } from "../publicAssetUrl";
 import type { ImageAppsSlide } from "../slides/types";
 import { SlideShell } from "../SlideShell";
 
@@ -19,8 +20,9 @@ export function ImageAppsSlideView({ slide }: Props) {
         {slide.imageSrc && !showPlaceholder ? (
           <img
             className="slide-image"
-            src={slide.imageSrc}
+            src={publicAssetUrl(slide.imageSrc)}
             alt={slide.imageAlt}
+            decoding="async"
             onError={onError}
           />
         ) : (
