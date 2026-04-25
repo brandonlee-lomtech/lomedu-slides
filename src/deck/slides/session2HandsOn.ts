@@ -20,9 +20,11 @@ export const session2HandsOn: Slide[] = [
   },
   {
     id: "s2-section-old",
-    variant: "section",
-    title: "The traditional path",
-    body: "Most curricula and job interviews were designed around a world where typing syntax and hunting errors were the default bottleneck.",
+    variant: "imageApps",
+    title: "Software programming",
+    imageSrc: "/images/session2-software-programming.png",
+    imageAlt:
+      "Flowchart titled Programming Languages Types: low-level (Binary Code, Machine Language), medium-level (C, C++, Assembly Language), and high-level (COBOL, Python, Pascal, Java) branching from a central node.",
   },
   {
     id: "s2-old-definition",
@@ -42,7 +44,6 @@ export const session2HandsOn: Slide[] = [
       "Tight loop: write → compile/run → read cryptic errors → search docs or forums → repeat",
       "Progress gated by environment setup — one misconfigured path can burn a whole evening",
     ],
-    footer: "None of this means you were “bad at computers.” The system was unforgiving.",
   },
   {
     id: "s2-section-new",
@@ -93,16 +94,6 @@ export const session2HandsOn: Slide[] = [
       "Evaluation is shifting toward reading code, reasoning about tradeoffs, and proving correctness — not only typing speed",
       "Organizations pair AI speed with policies: secrets handling, license compliance, and human review for risky changes",
     ],
-    footer: "Trends ≠ destiny: pick practices that match your course rules and your career goals.",
-  },
-  {
-    id: "s2-visual-landscape",
-    variant: "imageApps",
-    title: "Visual aid — the AI coding landscape",
-    prompt: "Which categories do you already recognize? What would you add in 12 months?",
-    imageSrc: "/images/ai-coding-landscape.png",
-    imageAlt:
-      "Diagram or collage mapping AI coding layers: inline suggestions, chat in the IDE, multi-file agents, CI and review, and human verification.",
   },
   {
     id: "s2-still-human",
@@ -115,7 +106,6 @@ export const session2HandsOn: Slide[] = [
       "Debug with hypotheses, logs, and minimal reproducers when behavior is wrong",
       "Respect academic integrity, licensing, and user privacy — same as before",
     ],
-    footer: "The new way changes the keyboard; it does not remove accountability.",
   },
   {
     id: "s2-quick-activity",
@@ -133,6 +123,5 @@ export const session2HandsOn: Slide[] = [
       "New way: natural language plus AI-generated drafts — with you responsible for quality and integrity",
       "Trends point toward multi-file assist and stronger verification skills, not away from thinking",
     ],
-    footer: "Next session: we connect this frame to guided practice in your tools.",
   },
 ];

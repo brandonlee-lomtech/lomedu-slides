@@ -5,13 +5,7 @@ type Props = { slide: PollSlide };
 
 export function PollSlideView({ slide }: Props) {
   return (
-    <SlideShell
-      footer={
-        slide.bridge ? (
-          <p className="slide-bridge">{slide.bridge}</p>
-        ) : undefined
-      }
-    >
+    <SlideShell>
       <h2 className="slide-heading">{slide.title}</h2>
       <ul className="slide-poll-questions">
         {slide.questions.map((q, i) => (

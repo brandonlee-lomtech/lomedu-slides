@@ -5,6 +5,8 @@ export type Slide =
   | BulletsSlide
   | TwoColumnSlide
   | ImageAppsSlide
+  | WebPromoSlide
+  | StatsSlide
   | PollSlide
   | QuizSlide
   | ContrastSlide
@@ -40,7 +42,8 @@ export interface BulletsSlide extends SlideBase {
   title: string;
   intro?: string;
   bullets: string[];
-  footer?: string;
+  /** Tighter spacing and slightly smaller gaps — use for scannable one-liners. */
+  compact?: boolean;
 }
 
 export interface TwoColumnSlide extends SlideBase {
@@ -55,17 +58,47 @@ export interface TwoColumnSlide extends SlideBase {
 export interface ImageAppsSlide extends SlideBase {
   variant: "imageApps";
   title: string;
-  prompt: string;
+  /** Optional facilitator line above the image; omit for title + image only. */
+  prompt?: string;
   /** e.g. /images/gen-vs-agentic-apps.png — if missing, placeholder shows */
   imageSrc?: string;
   imageAlt: string;
+}
+
+/** Live site embed + optional local promo video (MP4/WebM under `public/`). */
+export interface WebPromoSlide extends SlideBase {
+  variant: "webPromo";
+  title: string;
+  intro?: string;
+  /** Shown in an iframe (may be empty if the host sets X-Frame-Options). */
+  embedUrl: string;
+  /** Optional screen recording, e.g. `/videos/session5-seoul-persona-promo.mp4`. */
+  videoSrc?: string;
+  /** Accessible label for the embed region. */
+  embedTitle: string;
+}
+
+/** Big-number cards with optional meter bars; cite sources on each card. */
+export interface StatsSlideStat {
+  value: string;
+  label: string;
+  detail?: string;
+  source: string;
+  /** 0–100 width for decorative meter (optional). */
+  bar?: number;
+}
+
+export interface StatsSlide extends SlideBase {
+  variant: "stats";
+  title: string;
+  intro?: string;
+  stats: StatsSlideStat[];
 }
 
 export interface PollSlide extends SlideBase {
   variant: "poll";
   title: string;
   questions: string[];
-  bridge?: string;
 }
 
 export type QuizCorrectLetter = "A" | "B" | "C" | "D";
@@ -80,8 +113,6 @@ export interface QuizSlide extends SlideBase {
   optionC: string;
   optionD: string;
   correctLetter: QuizCorrectLetter;
-  /** Shown in the footer after the answer is revealed */
-  footer?: string;
 }
 
 export interface ContrastSlide extends SlideBase {
@@ -89,6 +120,9 @@ export interface ContrastSlide extends SlideBase {
   title: string;
   leftPrompt: string;
   rightPrompt: string;
+  /** Short column headers (defaults to neutral labels in the view). */
+  leftLabel?: string;
+  rightLabel?: string;
 }
 
 export interface ActivitySlide extends SlideBase {
@@ -102,5 +136,4 @@ export interface RecapSlide extends SlideBase {
   variant: "recap";
   title: string;
   bullets: string[];
-  footer?: string;
 }

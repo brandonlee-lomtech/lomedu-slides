@@ -12,12 +12,14 @@ import { BulletsSlideView } from "./variants/BulletsSlideView";
 import { ContrastSlideView } from "./variants/ContrastSlideView";
 import { DefinitionSlideView } from "./variants/DefinitionSlideView";
 import { ImageAppsSlideView } from "./variants/ImageAppsSlideView";
+import { StatsSlideView } from "./variants/StatsSlideView";
 import { PollSlideView } from "./variants/PollSlideView";
 import { QuizSlideView } from "./variants/QuizSlideView";
 import { RecapSlideView } from "./variants/RecapSlideView";
 import { SectionSlideView } from "./variants/SectionSlideView";
 import { TitleSlideView } from "./variants/TitleSlideView";
 import { TwoColumnSlideView } from "./variants/TwoColumnSlideView";
+import { WebPromoSlideView } from "./variants/WebPromoSlideView";
 
 export function renderSlide(slide: Slide, context: SlideRenderContext): ReactNode {
   switch (slide.variant) {
@@ -33,6 +35,10 @@ export function renderSlide(slide: Slide, context: SlideRenderContext): ReactNod
       return <TwoColumnSlideView slide={slide} />;
     case "imageApps":
       return <ImageAppsSlideView slide={slide} />;
+    case "webPromo":
+      return <WebPromoSlideView slide={slide} />;
+    case "stats":
+      return <StatsSlideView slide={slide} />;
     case "poll":
       return <PollSlideView slide={slide} />;
     case "quiz": {

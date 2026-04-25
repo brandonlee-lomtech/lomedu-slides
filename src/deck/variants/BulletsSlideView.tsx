@@ -4,11 +4,13 @@ import { SlideShell } from "../SlideShell";
 type Props = { slide: BulletsSlide };
 
 export function BulletsSlideView({ slide }: Props) {
+  const listClass =
+    "slide-bullets" + (slide.compact ? " slide-bullets--compact" : "");
   return (
-    <SlideShell footer={slide.footer ? <p className="slide-footnote">{slide.footer}</p> : undefined}>
+    <SlideShell>
       <h2 className="slide-heading">{slide.title}</h2>
       {slide.intro ? <p className="slide-intro">{slide.intro}</p> : null}
-      <ul className="slide-bullets">
+      <ul className={listClass}>
         {slide.bullets.map((item, i) => (
           <li key={i}>{item}</li>
         ))}

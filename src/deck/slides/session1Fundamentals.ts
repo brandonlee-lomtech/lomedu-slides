@@ -18,7 +18,6 @@ export const session1Fundamentals: Slide[] = [
       "“AI” shows up everywhere — not every use means the same technology or capability",
       "We map AI, generative tools, agent-style systems, and AI-assisted coding — then go hands-on later",
     ],
-    footer: "Hands up: used any AI tool in the last week?",
   },
   {
     id: "what-is-ai",
@@ -44,9 +43,18 @@ export const session1Fundamentals: Slide[] = [
     variant: "imageApps",
     title: "Tools you may already know",
     prompt: "Which apps in this visual have you already used?",
-    imageSrc: "/images/gen-vs-agentic-apps.png",
+    imageSrc: "/images/gen-vs-agentic-apps.svg",
     imageAlt:
       "Collage of popular AI applications illustrating generative tools (chat and image apps) and more agentic workflows (coding agents and assistants).",
+  },
+  {
+    id: "poll-chatgpt",
+    variant: "poll",
+    title: "Quick check-in",
+    questions: [
+      "Who has used ChatGPT (or a similar chat assistant) before?",
+      "Did it do things by itself — or mostly after you asked each time?",
+    ],
   },
   {
     id: "generative-def",
@@ -64,15 +72,6 @@ export const session1Fundamentals: Slide[] = [
       "Text and chat: ChatGPT, Gemini, Claude — drafts, summaries, brainstorming, code snippets",
       "Images and design: Midjourney, DALL·E 3, Stable Diffusion — visuals from descriptions",
       "Coding assist: GitHub Copilot, ChatGPT — suggest, explain, and refactor code with you in the loop",
-    ],
-  },
-  {
-    id: "poll-chatgpt",
-    variant: "poll",
-    title: "Quick check-in",
-    questions: [
-      "Who has used ChatGPT (or a similar chat assistant) before?",
-      "Did it do things by itself — or mostly after you asked each time?",
     ],
   },
   {
@@ -109,7 +108,6 @@ export const session1Fundamentals: Slide[] = [
       "Generative: one prompt → one main output you review",
       "Agentic: one goal → many steps, tool use, and checkpoints toward completion",
     ],
-    footer: "Real products often blend both patterns.",
   },
   {
     id: "ai-coding-def",
@@ -117,6 +115,14 @@ export const session1Fundamentals: Slide[] = [
     title: "What is AI coding?",
     definition:
       "AI coding is building software using natural-language instructions and AI-generated or AI-assisted code — with you directing intent, structure, and quality.",
+  },
+  {
+    id: "python-java-comparison",
+    variant: "imageApps",
+    title: "Python vs Java code comparison",
+    imageSrc: "/images/session1-python-java-comparison.png",
+    imageAlt:
+      "Infographic comparing Python and Java: side-by-side DevTools-style windows showing a short Python script for name and age input versus a longer Java class with Scanner and main for the same task.",
   },
   {
     id: "vibe-coding",
@@ -128,7 +134,6 @@ export const session1Fundamentals: Slide[] = [
       "You describe outcomes, constraints, and edge cases in plain language",
       "The AI handles much of the mechanical typing — you still review and integrate",
     ],
-    footer: "You remain responsible for the final product.",
   },
   {
     id: "activity",
@@ -147,6 +152,5 @@ export const session1Fundamentals: Slide[] = [
       "Generative vs agentic: artifact from a prompt vs multi-step pursuit of a goal",
       "AI coding: you steer with language; AI accelerates implementation — verify everything",
     ],
-    footer: "Next session: we turn these ideas into hands-on practice.",
   },
 ];

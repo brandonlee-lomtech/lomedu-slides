@@ -3,7 +3,7 @@ import { SlideShell } from "../SlideShell";
 
 type Props = {
   slide: QuizSlide;
-  /** When false, correct row and footer answer stay hidden (session 4 + Space to reveal). */
+  /** When false, correct row and answer line stay hidden (session 4 + Space to reveal). */
   answerRevealed?: boolean;
 };
 
@@ -17,20 +17,8 @@ const OPTION_KEY: Record<QuizCorrectLetter, "optionA" | "optionB" | "optionC" | 
 };
 
 export function QuizSlideView({ slide, answerRevealed = true }: Props) {
-  const footerNode = !answerRevealed ? (
-    <p className="slide-footnote slide-quiz-footer slide-quiz-footer--pending">
-      <span className="slide-bridge-label">Reveal:</span> Press space to show the answer
-    </p>
-  ) : slide.footer ? (
-    <p className="slide-footnote slide-quiz-footer">{slide.footer}</p>
-  ) : (
-    <p className="slide-footnote slide-quiz-footer">
-      <span className="slide-bridge-label">Answer:</span> {slide.correctLetter}
-    </p>
-  );
-
   return (
-    <SlideShell footer={footerNode}>
+    <SlideShell>
       <h2 className="slide-heading">{slide.title}</h2>
       <p className="slide-quiz-question">{slide.question}</p>
       <ul className="slide-quiz-options" aria-label="Choices">
@@ -54,6 +42,15 @@ export function QuizSlideView({ slide, answerRevealed = true }: Props) {
           );
         })}
       </ul>
+      {!answerRevealed ? (
+        <p className="slide-footnote slide-quiz-footer slide-quiz-footer--pending slide-quiz-meta">
+          <span className="slide-bridge-label">Reveal:</span> Press space to show the answer
+        </p>
+      ) : (
+        <p className="slide-footnote slide-quiz-footer slide-quiz-meta">
+          <span className="slide-bridge-label">Answer:</span> {slide.correctLetter}
+        </p>
+      )}
     </SlideShell>
   );
 }

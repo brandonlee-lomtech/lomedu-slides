@@ -15,7 +15,7 @@ export function ImageAppsSlideView({ slide }: Props) {
   return (
     <SlideShell>
       <h2 className="slide-heading">{slide.title}</h2>
-      <p className="slide-prompt">{slide.prompt}</p>
+      {slide.prompt?.trim() ? <p className="slide-prompt">{slide.prompt}</p> : null}
       <div className="slide-image-frame">
         {slide.imageSrc && !showPlaceholder ? (
           <img

@@ -3,9 +3,8 @@ import { session1Fundamentals } from "./session1Fundamentals";
 import { session2HandsOn } from "./session2HandsOn";
 import { session3ProgrammingFundamentals } from "./session3ProgrammingFundamentals";
 import { session4Quiz } from "./session4Quiz";
-import { session5InitiatingProjects } from "./session5InitiatingProjects";
-import { session6CursorClaudeCodex } from "./session6CursorClaudeCodex";
-import { session7CaseStudies } from "./session7CaseStudies";
+import { session5CaseStudies } from "./session5CaseStudies";
+import { session6AILaborMarket } from "./session6AILaborMarket";
 
 export type SessionDeck = {
   session: number;
@@ -24,15 +23,14 @@ export const SESSION_DECKS: SessionDeck[] = [
   { session: 4, title: "Session 4: Quiz", slides: session4Quiz },
   {
     session: 5,
-    title: "Session 5: Initiating Projects in Corporations",
-    slides: session5InitiatingProjects,
+    title: "Session 5: AI coding adoption & the workforce",
+    slides: session5CaseStudies,
   },
   {
     session: 6,
-    title: "Session 6: Cursor vs Claude vs Codex",
-    slides: session6CursorClaudeCodex,
+    title: "Session 6: AI coding adoption & labour-market evidence",
+    slides: session6AILaborMarket,
   },
-  { session: 7, title: "Session 7: Case Studies", slides: session7CaseStudies },
 ];
 
 const SESSION_NUMBERS = new Set(SESSION_DECKS.map((d) => d.session));

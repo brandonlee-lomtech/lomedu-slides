@@ -19,7 +19,6 @@ export const session4Quiz: Slide[] = [
       "Signal your choice as A, B, C, or D (hands, fingers, or your group’s usual signal)",
       "Press space to reveal the marked answer, then press space again to go to the next slide",
     ],
-    footer: "There is no grade here — wrong answers are useful for discussion.",
   },
   {
     id: "s4-q1",
@@ -31,7 +30,6 @@ export const session4Quiz: Slide[] = [
     optionC: "A collaborator",
     optionD: "A storage tool",
     correctLetter: "C",
-    footer: "AI sits beside you — you still judge quality, safety, and intent.",
   },
   {
     id: "s4-q2",
@@ -163,6 +161,5 @@ export const session4Quiz: Slide[] = [
       "Restaurant map: browser (front), server (kitchen), database / Supabase (pantry), GitHub (recipes + history)",
       "Generative vs agentic: new artifact vs multi-step pursuit of a goal",
     ],
-    footer: "Nice work — carry these checks into every lab.",
   },
 ];
